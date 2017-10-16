@@ -1,23 +1,23 @@
 package javaapplication2;
 import java.util.HashMap;
 
-public class Histogram {
+public class Histogram <T> {
 
-    private final int[] miVector;
+  private final T [] miVector;
 
-    public int[] getMivector() {
+    public T [] getMivector() {
         return miVector;
     }
 
-    public Histogram(int[] mivector) {
+    public Histogram(T [] mivector) {
         this.miVector = mivector;
     }
 
-    public HashMap<Integer, Integer> getHisto() {
+    public HashMap<T, Integer> getHisto() {
 
-        HashMap<Integer, Integer> histo = new HashMap<>();
+        HashMap<T, Integer> histo = new HashMap<>();
 
-        for (Integer value : miVector) {
+        for (T value : miVector) {
             if (!histo.containsKey(value)) {
                 histo.put(value, 0);
             }
@@ -25,5 +25,4 @@ public class Histogram {
         }
         return histo;
     }
-
 }
